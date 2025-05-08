@@ -1,31 +1,129 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+:root {
+  --primary-color: #fefefe;
+  --secondary-color: #393939;
+  --accent-color: #0172ad;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+  background-color: rgb(
+    from var(--primary-color) calc(r - 5) calc(g - 5) calc(b - 5)
+  );
 }
 
 body {
-  margin-bottom: 60px;
+  min-height: 100vh;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-right: 1em;
+  font-family: "Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+header {
+  position: fixed;
+  align-self: center;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+main {
+  margin-top: 5em;
+  width: 100%;
+}
+
+p {
+  max-width: 75ch;
+  line-height: 1.75;
+  margin-block: 1lh;
+  font-weight: 300;
+}
+
+strong,
+b {
+  color: var(--accent-color);
+}
+
+a {
+  color: var(--accent-color);
+  font-weight: 400;
+}
+
+.nav_header {
+  display: flex;
+  gap: 1.5em;
+  justify-content: center;
+  background-color: rgb(
+    from var(--primary-color) calc(r - 5) calc(g - 5) calc(b - 5) / 50%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 1em 1.5em;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.nav_header--link {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.nav_header--link:hover {
+  color: var(--accent-color);
+}
+
+.nav_header--link--active {
+  color: var(--accent-color);
+}
+
+.profile--img {
+  width: 96px;
+  height: 96px;
+  border-radius: calc(infinity * 1px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.profile--desc {
+  max-width: 60ch;
+}
+
+.profile--social {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.profile--social--link {
+  color: rgb(from var(--secondary-color) r g b / 70%);
+  transition: color 0.15s ease-in-out;
+}
+
+.profile--social--link:hover {
+  color: var(--secondary-color);
+}
+
+@media (min-width: 568px) {
+  body {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 1024px;
+    padding-left: 10em;
+    padding-right: 10em;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+  }
+
+  main {
+    margin-top: 7em;
+  }
+
+  .nav_header {
+    gap: 2em;
+  }
 }
