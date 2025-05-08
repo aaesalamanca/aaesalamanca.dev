@@ -7,18 +7,17 @@
     @{
         if (string.IsNullOrEmpty((string?)ViewData["Title"]))
         {
-            <title>Alejandro Estornell</title>
+            <title>Alejandro Estornell - Desarrollador de software con 5 años de experiencia especializado en .NET</title>
         }
         else
         {
             <title>@ViewData["Title"] - Alejandro Estornell</title>
         }
     }
+    <partial name="_Favicons" />
     <script type="importmap"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@picocss/pico@2/css/pico.min.css"
-        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:400,400i,700,700i" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=inter:300,300i,400,400i,700,700i" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
         integrity="sha384-uo/9/s/Ns8DTg4kjkjex8GezUcgMlKD99gTqxvMkIsaG4lSUbeJ0dVELljipv94t" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -27,11 +26,19 @@
 
 <body>
     <header>
-        <a asp-area="" asp-page="/Index">Alejandro Estornell</a>
-        <a asp-area="" asp-page="/SobreMi">Sobre Mí</a>
-        <a asp-area="" asp-page="/Contacto">Contacto</a>
+        <nav class="nav_header">
+            @{
+                var currentPage = ViewContext.ActionDescriptor?.RouteValues["page"];
+            }
+            <a class="nav_header--link @(currentPage == "/Index" ? "nav_header--link--active" : "")" asp-area=""
+                asp-page="/Index">Inicio</a>
+            <a class="nav_header--link @(currentPage == "/Proyectos" ? "nav_header--link--active" : "")" asp-area=""
+                asp-page="/Proyectos">Proyectos</a>
+            <a class="nav_header--link @(currentPage == "/SobreMi" ? "nav_header--link--active" : "")" asp-area=""
+                asp-page="/SobreMi">Sobre Mí</a>
+        </nav>
     </header>
-    <main role="main">
+    <main>
         @RenderBody()
     </main>
 
