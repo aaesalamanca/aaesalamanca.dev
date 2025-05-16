@@ -4,5 +4,9 @@
     "astro" // Enable .astro
   ],
   // https://github.com/ota-meshi/stylelint-config-html?tab=readme-ov-file#visual-studio-code
-  "stylelint.validate": ["astro"]
+  "stylelint.validate": ["astro"],
+  "[astro]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
