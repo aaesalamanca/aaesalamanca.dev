@@ -1,0 +1,58 @@
+<header>
+  <nav class="nav-header">
+    <a
+      href="/"
+      class={'nav-header-link ' +
+        (Astro.url.pathname === '/' ? 'nav-header-link-active' : '')}>Inicio</a
+    >
+    <a
+      href="/proyectos"
+      class={'nav-header-link ' +
+        (Astro.url.pathname === '/proyectos' ? 'nav-header-link-active' : '')}
+      >Proyectos</a
+    >
+    <a
+      href="/sobre-mi"
+      class={'nav-header-link ' +
+        (Astro.url.pathname === '/sobre-mi' ? 'nav-header-link-active' : '')}
+      >Sobre mí</a
+    >
+  </nav>
+</header>
+<style>
+  header {
+    position: fixed;
+    align-self: center;
+  }
+
+  .nav-header {
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+    background-color: rgb(
+      from var(--primary-color) calc(r - 5) calc(g - 5) calc(b - 5) / 50%
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 1em 1.5em;
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 10%),
+      0 4px 6px -4px rgb(0 0 0 / 10%);
+  }
+
+  .nav-header-link {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+
+  .nav-header-link:hover,
+  .nav-header-link-active {
+    color: var(--accent-color);
+  }
+
+  @media (width >= 768px) {
+    .nav-header {
+      gap: 2em;
+    }
+  }
+</style>

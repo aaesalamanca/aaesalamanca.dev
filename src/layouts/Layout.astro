@@ -1,0 +1,96 @@
+---
+import Head from '../components/Head.astro'
+import Header from '../components/Header.astro'
+
+interface Props {
+  subtitle: string
+}
+
+const { subtitle } = Astro.props
+---
+
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <meta name="generator" content={Astro.generator} />
+    <Head subtitle={subtitle} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary-color: #fefefe;
+    --secondary-color: #393939;
+    --accent-color: #0172ad;
+  }
+
+  html {
+    background-color: rgb(
+      from var(--primary-color) calc(r - 5) calc(g - 5) calc(b - 5)
+    );
+  }
+
+  body {
+    min-height: 100vh;
+    padding-left: 1em;
+    padding-top: 1.5em;
+    padding-right: 1em;
+    font-family:
+      Inter, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji';
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    margin-top: 5em;
+    width: 100%;
+  }
+
+  p {
+    max-width: 75ch;
+    line-height: 1.75;
+    margin-block: 1lh;
+    font-weight: 300;
+  }
+
+  strong,
+  b {
+    color: var(--accent-color);
+  }
+
+  a {
+    color: var(--accent-color);
+    font-weight: 400;
+  }
+
+  @media (width >= 568px) {
+    body {
+      padding-left: 5em;
+      padding-right: 5em;
+    }
+  }
+
+  @media (width >= 768px) {
+    body {
+      max-width: 1024px;
+      padding-left: 10em;
+      padding-right: 10em;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: flex-start;
+    }
+
+    main {
+      margin-top: 7em;
+    }
+  }
+</style>
