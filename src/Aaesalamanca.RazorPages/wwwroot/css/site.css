@@ -70,6 +70,7 @@ a {
 
 .nav_header--link:hover {
   color: var(--accent-color);
+  transition: color 0.15s ease-in-out;
 }
 
 .nav_header--link--active {
