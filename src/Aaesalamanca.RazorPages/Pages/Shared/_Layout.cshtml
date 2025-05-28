@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es-ES">
 
 <head>
     <meta charset="utf-8" />
@@ -25,15 +25,15 @@
 
 <body>
     <header>
-        <nav class="nav_header">
+        <nav class="nav-header">
             @{
                 var currentPage = ViewContext.ActionDescriptor?.RouteValues["page"];
             }
-            <a class="nav_header--link @(currentPage == "/Index" ? "nav_header--link--active" : "")" asp-area=""
+            <a class="nav-header-link @(currentPage == "/Index" ? "nav-header-link-active" : "")" asp-area=""
                 asp-page="/Index">Inicio</a>
-            <a class="nav_header--link @(currentPage == "/Proyectos" ? "nav_header--link--active" : "")" asp-area=""
+            <a class="nav-header-link @(currentPage == "/Proyectos" ? "nav-header-link-active" : "")" asp-area=""
                 asp-page="/Proyectos">Proyectos</a>
-            <a class="nav_header--link @(currentPage == "/SobreMi" ? "nav_header--link--active" : "")" asp-area=""
+            <a class="nav-header-link @(currentPage == "/SobreMi" ? "nav-header-link-active" : "")" asp-area=""
                 asp-page="/SobreMi">Sobre Mí</a>
         </nav>
     </header>

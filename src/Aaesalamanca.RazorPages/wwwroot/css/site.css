@@ -15,8 +15,9 @@ body {
   padding-left: 1em;
   padding-top: 1em;
   padding-right: 1em;
-  font-family: "Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family:
+    Inter, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji';
   color: var(--secondary-color);
   background-color: var(--primary-color);
   display: flex;
@@ -50,7 +51,7 @@ a {
   font-weight: 400;
 }
 
-.nav_header {
+.nav-header {
   display: flex;
   gap: 1.5em;
   justify-content: center;
@@ -60,53 +61,57 @@ a {
   backdrop-filter: blur(20px);
   border-radius: 25px;
   padding: 1em 1.5em;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -4px rgb(0 0 0 / 10%);
 }
 
-.nav_header--link {
+.nav-header-link {
   text-decoration: none;
   color: var(--secondary-color);
 }
 
-.nav_header--link:hover,
-.nav_header--link--active {
+.nav-header-link:hover,
+.nav-header-link-active {
   color: var(--accent-color);
 }
 
-.profile--img {
+.profile-img {
   width: 96px;
   height: 96px;
   border-radius: calc(infinity * 1px);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -4px rgb(0 0 0 / 10%);
 }
 
-.profile--desc {
+.profile-desc {
   max-width: 60ch;
 }
 
-.profile--social {
+.profile-social {
   display: flex;
   align-items: center;
   gap: 1.5em;
 }
 
-.profile--social--link {
+.profile-social-link {
   color: rgb(from var(--secondary-color) r g b / 70%);
   transition: color 0.15s ease-in-out;
 }
 
-.profile--social--link:hover {
+.profile-social-link:hover {
   color: var(--secondary-color);
 }
 
-@media (min-width: 568px) {
+@media (width >= 568px) {
   body {
     padding-left: 5em;
     padding-right: 5em;
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   body {
     max-width: 1024px;
     padding-left: 10em;
@@ -120,7 +125,7 @@ a {
     margin-top: 7em;
   }
 
-  .nav_header {
+  .nav-header {
     gap: 2em;
   }
 }
