@@ -68,10 +68,7 @@ a {
   color: var(--secondary-color);
 }
 
-.nav_header--link:hover {
-  color: var(--accent-color);
-}
-
+.nav_header--link:hover,
 .nav_header--link--active {
   color: var(--accent-color);
 }
