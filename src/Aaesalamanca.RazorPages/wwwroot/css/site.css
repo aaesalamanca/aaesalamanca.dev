@@ -15,8 +15,9 @@ body {
   padding-left: 1em;
   padding-top: 1em;
   padding-right: 1em;
-  font-family: "Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family:
+    Inter, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji';
   color: var(--secondary-color);
   background-color: var(--primary-color);
   display: flex;
@@ -60,7 +61,9 @@ a {
   backdrop-filter: blur(20px);
   border-radius: 25px;
   padding: 1em 1.5em;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -4px rgb(0 0 0 / 10%);
 }
 
 .nav_header--link {
@@ -77,7 +80,9 @@ a {
   width: 96px;
   height: 96px;
   border-radius: calc(infinity * 1px);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -4px rgb(0 0 0 / 10%);
 }
 
 .profile--desc {
@@ -99,14 +104,14 @@ a {
   color: var(--secondary-color);
 }
 
-@media (min-width: 568px) {
+@media (width >= 568px) {
   body {
     padding-left: 5em;
     padding-right: 5em;
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   body {
     max-width: 1024px;
     padding-left: 10em;
