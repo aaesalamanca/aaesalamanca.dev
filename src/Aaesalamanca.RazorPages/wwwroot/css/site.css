@@ -1,3 +1,4 @@
+/* General styles */
 :root {
   --primary-color: #fefefe;
   --secondary-color: #393939;
@@ -11,7 +12,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   padding-left: 1em;
   padding-top: 1em;
   padding-right: 1em;
@@ -49,6 +50,15 @@ b {
 a {
   color: var(--accent-color);
   font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(from var(--accent-color) calc(r - 65) calc(g - 65) calc(b - 65));
 }
 
 .nav-header {
@@ -71,11 +81,24 @@ a {
   color: var(--secondary-color);
 }
 
-.nav-header-link:hover,
+.nav-header-link:visited {
+  color: var(--secondary-color);
+}
+
+.nav-header-link:hover {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
 .nav-header-link-active {
   color: var(--accent-color);
 }
 
+.nav-header-link-active:visited {
+  color: var(--accent-color);
+}
+
+/* Index styles */
 .profile-img {
   width: 96px;
   height: 96px;
@@ -104,7 +127,10 @@ a {
   color: var(--secondary-color);
 }
 
+/* About me styles */
+
 @media (width >= 568px) {
+  /* General styles */
   body {
     padding-left: 5em;
     padding-right: 5em;
@@ -112,6 +138,7 @@ a {
 }
 
 @media (width >= 768px) {
+  /* General styles */
   body {
     max-width: 1024px;
     padding-left: 10em;
