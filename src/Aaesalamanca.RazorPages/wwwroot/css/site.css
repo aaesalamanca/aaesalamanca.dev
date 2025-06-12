@@ -1,3 +1,4 @@
+/* General styles */
 :root {
   --primary-color: #fefefe;
   --secondary-color: #393939;
@@ -11,10 +12,8 @@ html {
 }
 
 body {
-  min-height: 100vh;
-  padding-left: 1em;
-  padding-top: 1em;
-  padding-right: 1em;
+  min-height: 100dvh;
+  padding: 1em 1em 2em;
   font-family:
     Inter, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji';
@@ -26,6 +25,7 @@ body {
 
 header {
   position: fixed;
+  z-index: 1;
   align-self: center;
 }
 
@@ -34,7 +34,8 @@ main {
   width: 100%;
 }
 
-p {
+p,
+li {
   max-width: 75ch;
   line-height: 1.75;
   margin-block: 1lh;
@@ -49,6 +50,15 @@ b {
 a {
   color: var(--accent-color);
   font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(from var(--accent-color) calc(r - 65) calc(g - 65) calc(b - 65));
 }
 
 .nav-header {
@@ -71,11 +81,24 @@ a {
   color: var(--secondary-color);
 }
 
-.nav-header-link:hover,
+.nav-header-link:visited {
+  color: var(--secondary-color);
+}
+
+.nav-header-link:hover {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
 .nav-header-link-active {
   color: var(--accent-color);
 }
 
+.nav-header-link-active:visited {
+  color: var(--accent-color);
+}
+
+/* Index styles */
 .profile-img {
   width: 96px;
   height: 96px;
@@ -104,7 +127,47 @@ a {
   color: var(--secondary-color);
 }
 
+.blog-list {
+  margin-top: 2.5em;
+}
+
+/* About me styles */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: var(--secondary-color);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+  padding-left: 1em;
+}
+
+.timeline-event {
+  display: flex;
+  align-items: baseline;
+}
+
+.timeline-event-marker {
+  fill: var(--accent-color);
+  position: relative;
+  left: -6px;
+  top: 6px;
+  min-width: 12px;
+}
+
+.timeline-event-content {
+  padding-left: 1em;
+}
+
 @media (width >= 568px) {
+  /* General styles */
   body {
     padding-left: 5em;
     padding-right: 5em;
@@ -112,6 +175,7 @@ a {
 }
 
 @media (width >= 768px) {
+  /* General styles */
   body {
     max-width: 1024px;
     padding-left: 10em;
@@ -127,5 +191,43 @@ a {
 
   .nav-header {
     gap: 2em;
+  }
+
+  /* About me styles */
+  .timeline::before {
+    left: 50%;
+  }
+
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline-event:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .timeline-event-marker {
+    order: 1;
+  }
+
+  .timeline-event-content {
+    width: 50%;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 2em;
+  }
+
+  .timeline-event:nth-child(odd) .timeline-event-marker {
+    left: -6px;
+  }
+
+  .timeline-event:nth-child(even) .timeline-event-content {
+    text-align: left;
+    padding-left: 2em;
+    padding-right: 0;
+  }
+
+  .timeline-event:nth-child(even) .timeline-event-marker {
+    left: 6px;
   }
 }
