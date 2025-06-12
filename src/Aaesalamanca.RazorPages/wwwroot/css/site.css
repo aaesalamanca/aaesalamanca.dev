@@ -13,9 +13,7 @@ html {
 
 body {
   min-height: 100dvh;
-  padding-left: 1em;
-  padding-top: 1em;
-  padding-right: 1em;
+  padding: 1em 1em 2em;
   font-family:
     Inter, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji';
@@ -27,6 +25,7 @@ body {
 
 header {
   position: fixed;
+  z-index: 1;
   align-self: center;
 }
 
@@ -35,7 +34,8 @@ main {
   width: 100%;
 }
 
-p {
+p,
+li {
   max-width: 75ch;
   line-height: 1.75;
   margin-block: 1lh;
@@ -127,7 +127,44 @@ a:visited {
   color: var(--secondary-color);
 }
 
+.blog-list {
+  margin-top: 2.5em;
+}
+
 /* About me styles */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: var(--secondary-color);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+  padding-left: 1em;
+}
+
+.timeline-event {
+  display: flex;
+  align-items: baseline;
+}
+
+.timeline-event-marker {
+  fill: var(--accent-color);
+  position: relative;
+  left: -6px;
+  top: 6px;
+  min-width: 12px;
+}
+
+.timeline-event-content {
+  padding-left: 1em;
+}
 
 @media (width >= 568px) {
   /* General styles */
@@ -154,5 +191,43 @@ a:visited {
 
   .nav-header {
     gap: 2em;
+  }
+
+  /* About me styles */
+  .timeline::before {
+    left: 50%;
+  }
+
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline-event:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .timeline-event-marker {
+    order: 1;
+  }
+
+  .timeline-event-content {
+    width: 50%;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 2em;
+  }
+
+  .timeline-event:nth-child(odd) .timeline-event-marker {
+    left: -6px;
+  }
+
+  .timeline-event:nth-child(even) .timeline-event-content {
+    text-align: left;
+    padding-left: 2em;
+    padding-right: 0;
+  }
+
+  .timeline-event:nth-child(even) .timeline-event-marker {
+    left: 6px;
   }
 }
