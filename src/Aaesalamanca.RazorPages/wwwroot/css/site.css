@@ -29,10 +29,11 @@ header {
   position: fixed;
   z-index: 1;
   align-self: center;
+  top: 90%;
 }
 
 main {
-  margin-top: 5em;
+  margin-top: 1em;
   width: 100%;
 }
 
@@ -65,6 +66,7 @@ a:visited {
 
 footer {
   text-align: center;
+  padding-bottom: 2em;
 }
 
 .nav-header {
@@ -72,7 +74,7 @@ footer {
   gap: 1.5em;
   justify-content: center;
   background-color: rgb(
-    from var(--primary-color) calc(r - 5) calc(g - 5) calc(b - 5) / 50%
+    from var(--primary-color) calc(r - 20) calc(g - 20) calc(b - 20) / 50%
   );
   backdrop-filter: blur(20px);
   border-radius: 25px;
@@ -177,6 +179,14 @@ footer {
   body {
     padding-left: 5em;
     padding-right: 5em;
+  }
+
+  main {
+    margin-top: 5em;
+  }
+
+  header {
+    top: inherit;
   }
 }
 
