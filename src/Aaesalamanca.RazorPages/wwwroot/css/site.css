@@ -13,7 +13,7 @@ html {
 
 body {
   min-height: 100dvh;
-  padding: 1em 1em 2em;
+  padding: 0.5em 1em 4em;
   font-family:
     Inter, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji';
@@ -29,10 +29,11 @@ header {
   position: fixed;
   z-index: 1;
   align-self: center;
+  top: 90%;
 }
 
 main {
-  margin-top: 5em;
+  margin-top: 1em;
   width: 100%;
 }
 
@@ -72,11 +73,11 @@ footer {
   gap: 1.5em;
   justify-content: center;
   background-color: rgb(
-    from var(--primary-color) calc(r - 5) calc(g - 5) calc(b - 5) / 50%
+    from var(--primary-color) calc(r - 15) calc(g - 15) calc(b - 15) / 50%
   );
   backdrop-filter: blur(20px);
-  border-radius: 25px;
-  padding: 1em 1.5em;
+  border-radius: 40px;
+  padding: 0.75em 1em;
   box-shadow:
     0 10px 15px -3px rgb(0 0 0 / 10%),
     0 4px 6px -4px rgb(0 0 0 / 10%);
@@ -85,6 +86,11 @@ footer {
 .nav-header-link {
   text-decoration: none;
   color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+  font-size: 0.5em;
 }
 
 .nav-header-link:visited {
@@ -175,8 +181,31 @@ footer {
 @media (width >= 568px) {
   /* General styles */
   body {
-    padding-left: 5em;
-    padding-right: 5em;
+    padding: 0.75em 5em 0;
+  }
+
+  main {
+    margin-top: 4.75em;
+  }
+
+  header {
+    top: inherit;
+  }
+
+  .nav-header {
+    gap: 2em;
+    padding: 1em 1.5em;
+    background-color: rgb(
+      from var(--primary-color) calc(r - 10) calc(g - 10) calc(b - 10) / 50%
+    );
+  }
+
+  .nav-header-link {
+    font-size: inherit;
+  }
+
+  .nav-header-link svg {
+    display: none;
   }
 }
 
@@ -188,14 +217,6 @@ footer {
     padding-right: 10em;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  main {
-    margin-top: 7em;
-  }
-
-  .nav-header {
-    gap: 2em;
   }
 
   /* About me styles */
