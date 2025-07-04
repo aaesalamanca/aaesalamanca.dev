@@ -143,6 +143,56 @@ footer {
   margin-top: 2.5em;
 }
 
+/* Project styles */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.project-list-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: rgb(
+    from var(--primary-color) calc(r - 15) calc(g - 15) calc(b - 15) / 50%
+  );
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -4px rgb(0 0 0 / 10%);
+  border-radius: 10px;
+  padding: 1.25em;
+  transition: transform 0.15s ease-in-out;
+  color: var(--secondary-color);
+}
+
+.project-list-card:hover {
+  transform: scaleX(1.01) scaleY(1.01);
+  text-decoration: none;
+}
+
+.project-list-card:visited {
+  color: var(--secondary-color);
+}
+
+.project-list-card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-list-card-title svg {
+  color: var(--accent-color);
+}
+
+.project-list-card-title-accent {
+  color: var(--accent-color);
+}
+
+.project-list-card h3,
+.project-list-card p {
+  margin: 0;
+}
+
 /* About me styles */
 .timeline::before {
   content: '';
@@ -213,10 +263,17 @@ footer {
   /* General styles */
   body {
     max-width: 1024px;
-    padding-left: 10em;
-    padding-right: 10em;
+    padding-left: 8em;
+    padding-right: 8em;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* Project styles */
+  .project-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
   }
 
   /* About me styles */
