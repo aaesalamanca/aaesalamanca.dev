@@ -54,6 +54,7 @@ a {
   color: var(--accent-color);
   font-weight: 400;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a:hover {
