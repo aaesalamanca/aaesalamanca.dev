@@ -121,6 +121,8 @@ a:visited {
 
 footer {
   text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
 }
 
 .nav-header {
