@@ -3,7 +3,8 @@
   --primary-color: #fefefe;
   --secondary-color: #393939;
   --accent-color: #0172ad;
-  --text-muted: #64748b;
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
 }
 
 html {
@@ -112,7 +113,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:visited {
@@ -127,17 +128,13 @@ footer {
 
 .nav-header {
   display: flex;
-  gap: 1.5em;
+  gap: 0.5rem;
   justify-content: center;
-  background-color: rgb(
-    from var(--primary-color) calc(r - 15) calc(g - 15) calc(b - 15) / 50%
-  );
+  background: rgb(from var(--primary-color) r g b / 95%);
   backdrop-filter: blur(20px);
-  border-radius: 40px;
-  padding: 0.75em 1em;
-  box-shadow:
-    0 10px 15px -3px rgb(0 0 0 / 10%),
-    0 4px 6px -4px rgb(0 0 0 / 10%);
+  border-radius: 2rem;
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow-lg);
 }
 
 .nav-header-link {
@@ -324,6 +321,33 @@ footer {
     padding-right: 8em;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  a {
+    transition: all 0.2s ease-in-out;
+    position: relative;
+  }
+
+  a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    border-radius: 1px;
+    transition: width 0.3s ease-in-out;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+
+  a:visited::after {
+    background: rgb(
+      from var(--accent-color) calc(r - 65) calc(g - 65) calc(b - 65)
+    );
   }
 
   /* Project styles */
