@@ -9,6 +9,7 @@
     #3b82f6 0%,
     var(--accent-color) 100%
   );
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
   --shadow-lg:
     0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
   --shadow-xl:
@@ -191,20 +192,19 @@ footer {
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
+  gap: 2rem;
 }
 
 .project-list-card {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  background: rgb(
-    from var(--primary-color) calc(r - 15) calc(g - 15) calc(b - 15) / 50%
-  );
-  box-shadow: var(--shadow-lg);
-  border-radius: 10px;
-  padding: 1.25em;
+  gap: 1rem;
+  background: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  border-radius: 1rem;
+  padding: 2rem;
   color: var(--secondary-color);
+  border: 1px solid var(--border-color);
   overflow: hidden;
 }
 
@@ -215,6 +215,7 @@ footer {
 .project-list-card-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .project-list-card-title svg {
@@ -223,11 +224,18 @@ footer {
 
 .project-list-card-title-accent {
   color: var(--accent-color);
+  font-weight: 600;
 }
 
-.project-list-card h3,
+.project-list-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 .project-list-card p {
   margin: 0;
+  line-height: 1.6;
 }
 
 /* About me styles */
@@ -389,7 +397,15 @@ footer {
 
   .project-list-card:hover {
     box-shadow: var(--shadow-xl);
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .project-list-card-title svg {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .project-list-card:hover .project-list-card-title svg {
+    transform: scale(1.1) rotate(5deg);
   }
 
   /* About me styles */
