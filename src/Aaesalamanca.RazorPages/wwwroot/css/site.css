@@ -115,10 +115,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
 a:visited {
   color: rgb(from var(--accent-color) calc(r - 65) calc(g - 65) calc(b - 65));
 }
@@ -188,10 +184,6 @@ footer {
   transition: color 0.15s ease-in-out;
 }
 
-.profile-social-link:hover {
-  color: var(--secondary-color);
-}
-
 .blog-list {
   margin-top: 2.5em;
 }
@@ -217,11 +209,6 @@ footer {
   padding: 1.25em;
   transition: transform 0.15s ease-in-out;
   color: var(--secondary-color);
-}
-
-.project-list-card:hover {
-  transform: scaleX(1.01) scaleY(1.01);
-  text-decoration: none;
 }
 
 .project-list-card:visited {
@@ -324,6 +311,10 @@ footer {
     position: relative;
   }
 
+  a:hover {
+    text-decoration: none;
+  }
+
   a::after {
     content: '';
     position: absolute;
@@ -371,11 +362,21 @@ footer {
     background: var(--accent-color);
   }
 
+  /* Index styles */
+  .profile-social-link:hover {
+    color: var(--secondary-color);
+  }
+
   /* Project styles */
   .project-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5em;
+  }
+
+  .project-list-card:hover {
+    transform: scale(1.01);
+    text-decoration: none;
   }
 
   /* About me styles */
