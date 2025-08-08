@@ -381,7 +381,7 @@ footer {
   .profile-social-link:hover {
     color: var(--background-color);
     background: var(--gradient-accent);
-    outline: 0;
+    outline-color: transparent;
     box-shadow: var(--shadow-xl);
     transform: translateY(-2px) scale(1.1);
   }
