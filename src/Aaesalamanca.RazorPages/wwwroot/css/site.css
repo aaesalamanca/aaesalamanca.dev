@@ -3,16 +3,17 @@
   --background-color: #fefefe;
   --text-color: #393939;
   --primary-color: #0172ad;
-  --accent-color: #ebf8ff;
+  --accent-color-1: #ebf8ff;
+  --accent-color-2: #48befe;
   --border-color: #e0e0e0;
   --background-gradient: linear-gradient(
     135deg,
     var(--background-color) 0%,
-    var(--accent-color) 100%
+    var(--accent-color-1) 100%
   );
   --gradient-accent: linear-gradient(
     135deg,
-    #3b82f6 0%,
+    var(--accent-color-2) 0%,
     var(--primary-color) 100%
   );
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
@@ -175,7 +176,6 @@ footer {
 
 .profile-social-link {
   color: var(--primary-color);
-  transition: all 0.2s ease-in-out;
   padding: 0.75rem;
   border-radius: 50%;
   border-radius: calc(infinity * 1px);
@@ -302,7 +302,7 @@ footer {
   }
 
   a {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     position: relative;
   }
 
@@ -373,6 +373,10 @@ footer {
     transform: scale(1.05) translateY(-4px);
   }
 
+  .profile-social-link {
+    transition: all 0.3s ease-in-out;
+  }
+
   .profile-social-link:hover {
     color: var(--background-color);
     background: var(--gradient-accent);
@@ -398,7 +402,7 @@ footer {
   }
 
   .project-list-card-title svg {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .project-list-card:hover .project-list-card-title svg {
