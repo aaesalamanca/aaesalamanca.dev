@@ -180,12 +180,13 @@ footer {
   border-radius: 50%;
   border-radius: calc(infinity * 1px);
   background: var(--background-color);
-  border: 1px solid var(--border-color);
+  outline: 1px solid var(--border-color);
   box-shadow: var(--shadow-md);
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  will-change: transform;
 }
 
 .blog-list {
@@ -380,7 +381,7 @@ footer {
   .profile-social-link:hover {
     color: var(--background-color);
     background: var(--gradient-accent);
-    border-color: transparent;
+    outline: 0;
     box-shadow: var(--shadow-xl);
     transform: translateY(-2px) scale(1.1);
   }
