@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MyApp.Namespace
+namespace Aaesalamanca.RazorPages.Pages;
+
+public class SobreMiModel : PageModel
 {
-    public class SobreMiModel : PageModel
-    {
-        public void OnGet() { }
-    }
+    public void OnGet() { }
 }

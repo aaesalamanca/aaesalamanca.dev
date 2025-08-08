@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Aaesalamanca.RazorPages.Pages;
 
-public class ProyectosModel : PageModel
+public class ServiciosModel : PageModel
 {
     public void OnGet() { }
 }
