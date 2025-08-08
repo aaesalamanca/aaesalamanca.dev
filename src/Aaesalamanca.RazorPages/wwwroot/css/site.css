@@ -378,7 +378,8 @@ footer {
     transition: all 0.3s ease-in-out;
   }
 
-  .profile-social-link:hover {
+  .profile-social-link:hover,
+  .profile-social-link:focus {
     color: var(--background-color);
     background: var(--gradient-accent);
     outline-color: transparent;
