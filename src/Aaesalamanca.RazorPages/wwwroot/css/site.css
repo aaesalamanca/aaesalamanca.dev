@@ -5,6 +5,7 @@
   --primary-color: #0172ad;
   --accent-color-1: #ebf8ff;
   --accent-color-2: #48befe;
+  --accent-color-3: #003551;
   --border-color: #e0e0e0;
   --background-gradient: linear-gradient(
     135deg,
@@ -113,7 +114,7 @@ a {
 }
 
 a:visited {
-  color: rgb(from var(--primary-color) calc(r - 65) calc(g - 65) calc(b - 65));
+  color: var(--accent-color-3);
 }
 
 footer {
@@ -334,9 +335,7 @@ footer {
   }
 
   a:visited::after {
-    background: rgb(
-      from var(--primary-color) calc(r - 65) calc(g - 65) calc(b - 65)
-    );
+    background: var(--accent-color-3);
   }
 
   .nav-header {
