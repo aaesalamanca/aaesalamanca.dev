@@ -311,6 +311,10 @@ footer {
     text-decoration: none;
   }
 
+  a:focus {
+    outline: 0;
+  }
+
   a::after {
     content: '';
     position: absolute;
@@ -323,7 +327,8 @@ footer {
     transition: width 0.3s ease-in-out;
   }
 
-  a:hover::after {
+  a:hover::after,
+  a:focus::after {
     width: 100%;
   }
 
@@ -345,12 +350,17 @@ footer {
     overflow: inherit;
   }
 
-  .nav-header-link:hover {
+  .nav-header-link:hover,
+  .nav-header-link:focus {
     color: var(--primary-color);
   }
 
   .nav-header-link svg {
     display: none;
+  }
+
+  .nav-header-link-active:focus {
+    outline: auto;
   }
 
   .nav-header-link-active::after {
