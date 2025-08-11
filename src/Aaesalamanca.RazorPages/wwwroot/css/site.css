@@ -5,6 +5,7 @@
   --primary-color: #0172ad;
   --accent-color-1: #ebf8ff;
   --accent-color-2: #48befe;
+  --accent-color-3: #003551;
   --border-color: #e0e0e0;
   --background-gradient: linear-gradient(
     135deg,
@@ -21,6 +22,7 @@
     0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
   --shadow-xl:
     0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+  --transition-default: all 0.3s ease-in-out;
 }
 
 html {
@@ -112,7 +114,7 @@ a {
 }
 
 a:visited {
-  color: rgb(from var(--primary-color) calc(r - 65) calc(g - 65) calc(b - 65));
+  color: var(--accent-color-3);
 }
 
 footer {
@@ -157,7 +159,7 @@ footer {
   height: 120px;
   border-radius: 50%;
   border-radius: calc(infinity * 1px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   border: 4px solid var(--background-color);
 }
 
@@ -303,7 +305,7 @@ footer {
   }
 
   a {
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition-default);
     position: relative;
   }
 
@@ -333,9 +335,7 @@ footer {
   }
 
   a:visited::after {
-    background: rgb(
-      from var(--primary-color) calc(r - 65) calc(g - 65) calc(b - 65)
-    );
+    background: var(--accent-color-3);
   }
 
   .nav-header {
@@ -377,15 +377,18 @@ footer {
 
   /* Index styles */
   .profile-img {
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition-default);
   }
 
   .profile-img:hover {
     transform: scale(1.05) translateY(-4px);
+    box-shadow: var(--shadow-xl);
   }
 
   .profile-social-link {
-    transition: all 0.3s ease-in-out;
+    transition:
+      transform 0.3s ease-in-out,
+      color 0.3s ease-out;
   }
 
   .profile-social-link:hover,
@@ -405,7 +408,7 @@ footer {
   }
 
   .project-list-card {
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition-default);
   }
 
   .project-list-card:hover {
@@ -414,7 +417,7 @@ footer {
   }
 
   .project-list-card-title svg {
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition-default);
   }
 
   .project-list-card:hover .project-list-card-title svg {
