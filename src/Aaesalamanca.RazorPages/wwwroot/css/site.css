@@ -305,7 +305,6 @@ footer {
   }
 
   a {
-    transition: var(--transition-default);
     position: relative;
   }
 
