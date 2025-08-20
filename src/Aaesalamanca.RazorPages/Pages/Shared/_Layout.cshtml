@@ -58,8 +58,8 @@
                 </a>
             }
 
-            <a class="nav-header-link @(currentPage == "/Proyectos" ? "nav-header-link-active" : "")" asp-area=""
-                asp-page="/Proyectos">
+            <a class="nav-header-link @(currentPage == "/Proyects" ? "nav-header-link-active" : "")" asp-area=""
+                asp-page="/Proyects">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                     class="icon icon-tabler icons-tabler-outline icon-tabler-code">
@@ -71,9 +71,9 @@
                 Proyectos
             </a>
 
-            @if (currentPage == "/SobreMi")
+            @if (currentPage == "/AboutMe")
             {
-                <a class="nav-header-link nav-header-link-active" asp-area="" asp-page="/SobreMi">
+                <a class="nav-header-link nav-header-link-active" asp-area="" asp-page="/AboutMe">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                         class="icon icon-tabler icons-tabler-filled icon-tabler-user">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -85,7 +85,7 @@
             }
             else
             {
-                <a class="nav-header-link" asp-area="" asp-page="/SobreMi">
+                <a class="nav-header-link" asp-area="" asp-page="/AboutMe">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                         class="icon icon-tabler icons-tabler-outline icon-tabler-user">
@@ -97,9 +97,9 @@
                 </a>
             }
 
-            @if (currentPage == "/Servicios")
+            @if (currentPage == "/Services")
             {
-                <a class="nav-header-link nav-header-link-active" asp-area="" asp-page="/Servicios">
+                <a class="nav-header-link nav-header-link-active" asp-area="" asp-page="/Services">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                         class="icon icon-tabler icons-tabler-filled icon-tabler-briefcase">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -110,7 +110,7 @@
             }
             else
             {
-                <a class="nav-header-link" asp-area="" asp-page="/Servicios">
+                <a class="nav-header-link" asp-area="" asp-page="/Services">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                         class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase">
