@@ -33,7 +33,7 @@ header {
   width: var(--size-full);
   background-color: rgb(255 255 255 / 80%);
   backdrop-filter: var(--blur-sm) saturate(200%);
-  border-top: 1px solid var(--color-grey-200);
+  border-top: var(--size-px) solid var(--color-grey-200);
   position: fixed;
   z-index: 1;
   bottom: 0;
@@ -229,6 +229,71 @@ footer {
   padding-left: var(--size-4);
 }
 
+@media (prefers-color-scheme: dark) {
+  /* General styles */
+  html {
+    background: linear-gradient(
+      135deg,
+      var(--color-grey-950) 0%,
+      var(--color-blue-950) 100%
+    );
+  }
+
+  body {
+    color: var(--color-grey-50);
+  }
+
+  header {
+    background-color: rgb(0 0 0 / 80%);
+    border-top: var(--size-px) solid var(--color-grey-800);
+  }
+
+  a:visited {
+    color: var(--color-blue-300);
+  }
+
+  .nav-header-link {
+    color: var(--color-grey-50);
+  }
+
+  .nav-header-link:visited {
+    color: var(--color-grey-50);
+  }
+
+  .nav-header-link-active {
+    color: var(--color-blue-500);
+  }
+
+  .nav-header-link-active:visited {
+    color: var(--color-blue-500);
+  }
+
+  /* Index styles */
+  .profile-img {
+    border: var(--size-1) solid var(--color-grey-800);
+  }
+
+  .profile-social-link {
+    color: var(--color-grey-400);
+  }
+
+  /* Project styles */
+  .project-list-card {
+    background: var(--color-grey-950);
+    color: var(--color-grey-50);
+    border: var(--size-px) solid var(--color-grey-800);
+  }
+
+  .project-list-card:visited {
+    color: var(--color-grey-50);
+  }
+
+  /* About me styles */
+  .timeline::before {
+    background: var(--color-grey-50);
+  }
+}
+
 @media (width >= 768px) {
   /* General styles */
   body {
@@ -409,6 +474,23 @@ footer {
 
   .timeline-event:nth-child(even) .timeline-event-marker {
     left: 6px;
+  }
+}
+
+@media (width >= 768px) and (prefers-color-scheme: dark) {
+  /* General styles */
+  header {
+    border-bottom: var(--size-px) solid var(--color-grey-800);
+  }
+
+  a:visited::after {
+    background: var(--color-blue-300);
+  }
+
+  /* Index styles */
+  .profile-social-link:hover,
+  .profile-social-link:focus {
+    color: var(--color-grey-50);
   }
 }
 
