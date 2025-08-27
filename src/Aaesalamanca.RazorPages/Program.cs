@@ -1,7 +1,11 @@
+using Aaesalamanca.RazorPages.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.Configure<GitHubOptions>(builder.Configuration.GetSection("GitHhub"));
 
 var app = builder.Build();
 
