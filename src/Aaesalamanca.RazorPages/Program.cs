@@ -1,4 +1,7 @@
+using System.Net.Http.Headers;
+using Aaesalamanca.RazorPages.Clients;
 using Aaesalamanca.RazorPages.Options;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,28 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddOptions<GitHubOptions>().BindConfiguration<GitHubOptions>("GitHub");
+
+builder.Services.AddHttpClient<IGitHubPostsClient, GitHubPostsClient>(
+    (serviceProvider, httpClient) =>
+    {
+        var gitHubOptions = serviceProvider.GetRequiredService<IOptions<GitHubOptions>>().Value;
+        httpClient.BaseAddress = new Uri("http://api.github.com");
+        httpClient.DefaultRequestHeaders.UserAgent.Add(
+            new ProductInfoHeaderValue("aaesalamanca-dev", "1.0")
+        );
+        httpClient.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/vnd.github+json")
+        );
+        httpClient.DefaultRequestHeaders.Add("X-GitHub-Api-Version", "2022-11-28");
+        if (!string.IsNullOrWhiteSpace(gitHubOptions.Token))
+        {
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+                "Bearer",
+                gitHubOptions.Token
+            );
+        }
+    }
+);
 
 var app = builder.Build();
 
