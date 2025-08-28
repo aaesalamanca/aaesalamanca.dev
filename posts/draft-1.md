@@ -2,6 +2,7 @@
 publishedDate: 2024-07-15
 editedDate: 2024-07-20
 description: 'Primeros pasos con Razor Pages en .NET 8.'
+isDraft: true
 ---
 
 # Introducción a Razor Pages

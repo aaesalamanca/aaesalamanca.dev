@@ -1,6 +1,7 @@
 ---
 publishedDate: 2024-08-10
 description: 'Cómo combinar Markdig con highlight.js para resaltar código.'
+isDraft: true
 ---
 
 # Trucos con Markdig y highlight.js
