@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.Configure<GitHubOptions>(builder.Configuration.GetSection("GitHhub"));
+builder.Services.AddOptions<GitHubOptions>().BindConfiguration<GitHubOptions>("GitHub");
 
 var app = builder.Build();
 
