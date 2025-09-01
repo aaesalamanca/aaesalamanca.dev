@@ -4,19 +4,15 @@
 }
 
 html {
-  background: linear-gradient(
-    135deg,
-    var(--color-grey-50) 0%,
-    var(--color-blue-50) 100%
-  );
+  background: var(--color-blue-50);
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100dvh;
-  padding: 0.5em 1em 4em;
+  padding: var(--size-2) var(--size-4) var(--size-16);
   font-family: var(--font-sans);
-  color: var(--color-grey-950);
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -100,7 +96,7 @@ footer {
 
 .nav-header-link {
   text-decoration: none;
-  color: var(--color-grey-950);
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +104,7 @@ footer {
 }
 
 .nav-header-link:visited {
-  color: var(--color-grey-950);
+  color: black;
 }
 
 .nav-header-link-active {
@@ -173,10 +169,7 @@ footer {
   align-items: center;
 }
 
-.project-list-card-title svg {
-  color: var(--color-blue-500);
-}
-
+.project-list-card-title svg,
 .project-list-card-title-accent {
   color: var(--color-blue-500);
 }
@@ -232,15 +225,11 @@ footer {
 @media (prefers-color-scheme: dark) {
   /* General styles */
   html {
-    background: linear-gradient(
-      135deg,
-      var(--color-grey-950) 0%,
-      var(--color-blue-950) 100%
-    );
+    background: var(--color-grey-950);
   }
 
   body {
-    color: var(--color-grey-50);
+    color: white;
   }
 
   header {
@@ -248,24 +237,30 @@ footer {
     border-top: var(--size-px) solid var(--color-grey-800);
   }
 
+  strong,
+  b,
+  a {
+    color: var(--color-blue-400);
+  }
+
   a:visited {
     color: var(--color-blue-300);
   }
 
   .nav-header-link {
-    color: var(--color-grey-50);
+    color: white;
   }
 
   .nav-header-link:visited {
-    color: var(--color-grey-50);
+    color: white;
   }
 
   .nav-header-link-active {
-    color: var(--color-blue-500);
+    color: var(--color-blue-400);
   }
 
   .nav-header-link-active:visited {
-    color: var(--color-blue-500);
+    color: var(--color-blue-400);
   }
 
   /* Index styles */
@@ -279,18 +274,27 @@ footer {
 
   /* Project styles */
   .project-list-card {
-    background: var(--color-grey-950);
-    color: var(--color-grey-50);
+    background: var(--color-grey-900);
+    color: white;
     border: var(--size-px) solid var(--color-grey-800);
   }
 
   .project-list-card:visited {
-    color: var(--color-grey-50);
+    color: white;
+  }
+
+  .project-list-card-title svg,
+  .project-list-card-title-accent {
+    color: var(--color-blue-400);
   }
 
   /* About me styles */
   .timeline::before {
-    background: var(--color-grey-50);
+    background: white;
+  }
+
+  .timeline-event-marker {
+    fill: var(--color-blue-400);
   }
 }
 
@@ -483,14 +487,24 @@ footer {
     border-bottom: var(--size-px) solid var(--color-grey-800);
   }
 
+  a::after {
+    background: var(--color-blue-400);
+  }
+
   a:visited::after {
     background: var(--color-blue-300);
+  }
+
+  .nav-header-link:hover,
+  .nav-header-link:focus,
+  .nav-header-link:visited::after {
+    color: var(--color-blue-400);
   }
 
   /* Index styles */
   .profile-social-link:hover,
   .profile-social-link:focus {
-    color: var(--color-grey-50);
+    color: white;
   }
 }
 
