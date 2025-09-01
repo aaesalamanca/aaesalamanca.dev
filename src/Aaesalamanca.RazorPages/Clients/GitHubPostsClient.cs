@@ -36,7 +36,6 @@ public class GitHubPostsClient(
 
         var bodyStream = await response.Content.ReadAsStreamAsync(ct);
         var bodyJson = await JsonDocument.ParseAsync(bodyStream, cancellationToken: ct);
-        _logger.LogInformation(bodyJson.ToString());
 
         var posts = new List<GitHubPostFile>();
         foreach (var item in bodyJson.RootElement.EnumerateArray())

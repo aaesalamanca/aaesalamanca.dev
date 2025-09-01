@@ -1,14 +1,12 @@
 using System.Net.Http.Headers;
 using Aaesalamanca.RazorPages.Clients;
 using Aaesalamanca.RazorPages.Options;
+using Aaesalamanca.RazorPages.Services;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
-
-builder.Services.AddOptions<GitHubOptions>().BindConfiguration<GitHubOptions>("GitHub");
+builder.Services.AddOptions<GitHubOptions>().BindConfiguration("GitHub");
 
 builder.Services.AddHttpClient<IGitHubPostsClient, GitHubPostsClient>(
     (serviceProvider, httpClient) =>
@@ -31,6 +29,11 @@ builder.Services.AddHttpClient<IGitHubPostsClient, GitHubPostsClient>(
         }
     }
 );
+
+// Add services to the container.
+builder.Services.AddRazorPages();
+
+builder.Services.AddSingleton<FrontMatterParser>();
 
 var app = builder.Build();
 
