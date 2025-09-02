@@ -34,6 +34,7 @@ builder.Services.AddHttpClient<IGitHubPostsClient, GitHubPostsClient>(
 builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<FrontMatterParser>();
+builder.Services.AddSingleton<MarkdownRenderer>();
 
 var app = builder.Build();
 
