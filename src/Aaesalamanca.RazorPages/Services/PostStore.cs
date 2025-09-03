@@ -4,29 +4,21 @@ using Aaesalamanca.RazorPages.Clients;
 
 namespace Aaesalamanca.RazorPages.Services;
 
-public sealed class PostStore
+public sealed class PostStore(
+    IGitHubPostsClient gitHubPostsClient,
+    FrontMatterParser frontMatterParser,
+    MarkdownRenderer markdownRenderer,
+    IWebHostEnvironment webHostEnvironment
+)
 {
-    private readonly IGitHubPostsClient _gitHubPostsClient;
-    private readonly FrontMatterParser _frontMatterParser;
-    private readonly MarkdownRenderer _markdownRenderer;
-    private readonly IWebHostEnvironment _webHostEnvironment;
+    private readonly IGitHubPostsClient _gitHubPostsClient = gitHubPostsClient;
+    private readonly FrontMatterParser _frontMatterParser = frontMatterParser;
+    private readonly MarkdownRenderer _markdownRenderer = markdownRenderer;
+    private readonly IWebHostEnvironment _webHostEnvironment = webHostEnvironment;
     private ImmutableDictionary<string, PostDocument> _posts = ImmutableDictionary<
         string,
         PostDocument
     >.Empty;
-
-    public PostStore(
-        IGitHubPostsClient gitHubPostsClient,
-        FrontMatterParser frontMatterParser,
-        MarkdownRenderer markdownRenderer,
-        IWebHostEnvironment webHostEnvironment
-    )
-    {
-        _gitHubPostsClient = gitHubPostsClient;
-        _frontMatterParser = frontMatterParser;
-        _markdownRenderer = markdownRenderer;
-        _webHostEnvironment = webHostEnvironment;
-    }
 
     public async Task ReloadAsync(CancellationToken ct = default)
     {

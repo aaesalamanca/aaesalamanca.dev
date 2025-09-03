@@ -1,5 +1,6 @@
 using System.Net.Http.Headers;
 using Aaesalamanca.RazorPages.Clients;
+using Aaesalamanca.RazorPages.HostedServices;
 using Aaesalamanca.RazorPages.Options;
 using Aaesalamanca.RazorPages.Services;
 using Microsoft.Extensions.Options;
@@ -36,6 +37,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<FrontMatterParser>();
 builder.Services.AddSingleton<MarkdownRenderer>();
 builder.Services.AddSingleton<PostStore>();
+
+builder.Services.AddHostedService<PostPreloaderHostedService>();
 
 var app = builder.Build();
 
