@@ -35,6 +35,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<FrontMatterParser>();
 builder.Services.AddSingleton<MarkdownRenderer>();
+builder.Services.AddSingleton<PostStore>();
 
 var app = builder.Build();
 
