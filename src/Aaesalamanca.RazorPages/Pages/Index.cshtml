@@ -52,4 +52,17 @@
 </article>
 <article class="blog-list">
     <h1>📝 Artículos</h1>
+    <ul>
+    @foreach (var post in Model.Posts)
+    {
+            <li class="blog-list-article">
+                <p><time
+                        datetime=@post.PublishedDate.ToString("yyyy-MM-dd")>@post.PublishedDate.ToString("yyyy.MM.dd")</time>
+                </p>
+                <a href="">
+                    @post.Title
+                </a>
+            </li>
+    }
+    </ul>
 </article>
