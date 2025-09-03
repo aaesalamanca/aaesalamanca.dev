@@ -10,7 +10,7 @@ public sealed class FrontMatterParser
     public FrontMatterParser()
     {
         _yamlDeserializer = new DeserializerBuilder()
-            .WithNamingConvention(PascalCaseNamingConvention.Instance)
+            .WithNamingConvention(HyphenatedNamingConvention.Instance)
             .IgnoreUnmatchedProperties()
             .Build();
     }
