@@ -1,46 +1,35 @@
-# Astro Starter Kit: Basics
+# aaesalamanca.dev
 
-```sh
-npm create astro@latest -- --template basics
-```
+Página _web_ personal y _blog_ desarrollado con **Astro**: [aaesalamanca.dev](https://aaesalamanca.dev)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Entorno de desarrollo
 
-## 🚀 Project Structure
+El repositorio está configurado para trabajar con Visual Studio Code, Astro, Prettier, ESLint y Stylelint, lo que permite:
 
-Inside of your Astro project, you'll see the following folders and files:
+- Resaltado de sintaxis para los componentes de Astro, HTML, CSS, JavaScript y TypeScript.
+- Formateo automático del código al guardar los archivos.
+- Validación de errores por parte de ESLint (JavaScript y TypeScript) y Stylelint (CSS).
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Requisitos previos
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- [Visual Studio Code](https://code.visualstudio.com). Con las extensiones:
+  - [language-tools](https://github.com/withastro/language-tools)
+  - [prettier-vscode](https://github.com/prettier/prettier-vscode)
+  - [vscode-eslint](https://github.com/Microsoft/vscode-eslint)
+  - [eslint-plugin-astro](https://ota-meshi.github.io/eslint-plugin-astro/)
+  - [vscode-stylelint](https://github.com/stylelint/vscode-stylelint)
+- [Node.js](https://nodejs.org/en)
 
-## 🧞 Commands
+## Ejecución y depuración
 
-All commands are run from the root of the project, from a terminal:
+Para ejecutar, probar o depurar el proyecto:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Clone el repositorio: `git clone https://github.com/aaesalamanca/aaesalamanca.dev.git`
+2. Ejecute, desde la raíz del repositorio, los siguientes comandos:
 
-## 👀 Want to learn more?
+   ```zsh
+   $ npm install
+   $ npm run dev
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3. Navegue a [`localhost:4321`](http://localhost:4321)
