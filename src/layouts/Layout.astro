@@ -1,0 +1,58 @@
+---
+// Import our custom CSS
+import '../scss/styles.scss'
+
+import Favicons from '../components/Favicons.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  pageName?: string
+}
+const { pageName } = Astro.props
+
+let title =
+  'Alejandro Estornell | Desarrollador de software con 5 años de experiencia especializado en .NET'
+if (pageName) {
+  title = `${pageName} | Alejandro Estornell`
+}
+---
+
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <Favicons />
+  </head>
+
+  <body class="container-fluid px-3 px-md-5">
+    <Header pageName={pageName} />
+    <main class="my-4">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      // Import all of Bootstrap’s JS
+      import 'bootstrap'
+    </script>
+  </body>
+</html>
+
+<style>
+  /* General styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  @media (width >= 768px) {
+    body {
+      max-width: 768px;
+    }
+  }
+</style>
