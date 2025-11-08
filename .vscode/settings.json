@@ -1,20 +1,21 @@
 {
-  "[csharp]": {
-    "editor.defaultFormatter": "csharpier.csharpier-vscode",
-    "editor.formatOnSave": true,
-    "editor.maxTokenizationLineLength": 2500,
-    "editor.inlineSuggest.suppressSuggestions": false
-  },
-  "[aspnetcorerazor]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-dotnettools.csharp"
-  },
-  "[xml]": {
-    "editor.defaultFormatter": "csharpier.csharpier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode",
     "editor.formatOnSave": true
   },
-  "[javascript][html][css][markdown][json][jsonc][yaml][graphql]": {
+  "[javascript][[html][css][markdown][json][jsonc][yaml][graphql][xml][typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    "astro", // Enable .astro
+    "typescript" // Enable .ts
+  ],
+  "stylelint.validate": [
+    // ↓ Add "html" language.
+    "html",
+    // ↓ Add "astro" language.
+    "astro"
+  ]
 }
