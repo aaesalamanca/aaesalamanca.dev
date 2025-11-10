@@ -21,6 +21,5 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
-  site: 'https://aaesalamanca.github.io',
-  base: '/aaesalamanca.dev',
+  site: 'https://aaesalamanca.dev',
 })
